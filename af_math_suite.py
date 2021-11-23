@@ -176,14 +176,13 @@ def cs_travelling_salesman_problem_total_routes(number_of_cities):
     print("The total number of routes: {}".format(total_routes))
     return total_routes
 
-def cs_check_clusters(sectors_per_cluster, sector_size_bytes, physical_file_size_bytes):
-    
-    if physical_file_size_bytes % (sectors_per_cluster * sector_size_bytes) == 0:
-        clusters = physical_file_size_bytes // (sectors_per_cluster * sector_size_bytes)
+def cs_check_clusters(sectors_per_cluster, sector_size_bytes, physical_file_size_bytes):    
+    if physical_file_size_bytes % (multiply(sectors_per_cluster, sector_size_bytes)) == 0:
+        clusters = physical_file_size_bytes // multiply(sectors_per_cluster, sector_size_bytes)
     else:
         clusters = (physical_file_size_bytes // (sectors_per_cluster * sector_size_bytes)) + 1
-    slack_space_bytes = (clusters * sectors_per_cluster * sector_size_bytes) - physical_file_size_bytes        
-    print('You will need {} clusters and you will have {} bytes of slack space'.format(clusters, slack_space_bytes))
+    slack_space_bytes = subtract(multiply(multiply(clusters, sectors_per_cluster), sector_size_bytes), physical_file_size_bytes)        
+    print('You will need {} cluster(s) and you will have {} bytes of slack space'.format(clusters, slack_space_bytes))
     return(clusters, slack_space_bytes)
 
 ##def cs_convert_denary_to_base(denary):
