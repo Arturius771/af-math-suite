@@ -11,13 +11,14 @@
 ##using the earlier functions.
 ##=======================================##
 ##Language + Version: Python 3.9.4
-##IDE + Version: IDLE 3.9.4
+##IDE + Version: IDLE 3.9.4 | Visual Studio Code 1.62.3
 ##Project Version: v1
 ##Lines of Code: WIP
 ##=======================================##
 ##Algorithm Algorithm Algorithm Algorithm
 ##=======================================##
 ##Modified:
+##23/11/2021 Switched main development to vs code
 ##=======================================##
 import math #for rounding int up
 import statistics #for median
