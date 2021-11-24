@@ -10,15 +10,16 @@
 ##multiplication, subtraction) and then further functions can be written
 ##using the earlier functions.
 ##=======================================##
-##Language + Version: Python 3.9.4
-##IDE + Version: IDLE 3.9.4 | Visual Studio Code 1.62.3
+##Language + Version: Python 3.10
+##IDE + Version: Visual Studio Code 1.62.3
 ##Project Version: v1
 ##Lines of Code: WIP
 ##=======================================##
 ##Algorithm Algorithm Algorithm Algorithm
 ##=======================================##
 ##Modified:
-##23/11/2021 Switched main development to vs code
+##23/11/2021 Switched main development to vs code from IDLE 3.9.4
+##24/11/2021 Moved to python 3.10
 ##=======================================##
 import math #for rounding int up
 import statistics #for median
