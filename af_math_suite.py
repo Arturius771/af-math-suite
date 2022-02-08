@@ -19,7 +19,7 @@
 ##=======================================##
 ##Modified:
 ##23/11/2021 Switched main development to vs code from IDLE 3.9.4
-##24/11/2021 Moved to python 3.10
+##24/11/2021 Moved to python 3.10 on ABAP
 ##=======================================##
 import math #for rounding int up
 import statistics #for median
@@ -213,9 +213,21 @@ def graph_equation_of_line(x1, y1, x2, y2):
         return b
     except TypeError:
         print("Equation of Line: You probably have a vertical line")
-    
 
-def radio_power_distances(distance1, distance2):
+def euclid(m,n):
+    """Given two positive integers, m and n, find their greatest common divisor which is the largest positive integer that divides both evenly."""
+
+    remainder = m % n
+    if remainder == 0:
+        print("Greatest common divisor for {} and {} = {}".format(m, n, n))
+        return n
+    else:
+        m = n
+        n = remainder
+        print("m {} n {}".format(m, n))
+        euclid(m,n)    
+
+def radiowave_power_distances(distance1, distance2):
     ##TM255 Block 1
     distance_ratio = divide(distance2, distance1) 
     distance1_strength = exponentialize(distance_ratio, 4)
@@ -224,7 +236,7 @@ def radio_power_distances(distance1, distance2):
     print("The strength of the signal at distance: {} is {} times weaker than distance {}".format(distance2, distance2_strength, distance1))
     return distance_ratio, distance1_strength, distance2_strength
 
-def radio_recieved_power(watts, distance_metres):
+def radiowave_recieved_power(watts, distance_metres):
     ##inverse square law
     ##tm255 block 1
     squared_distance = exponentialize(distance_metres, 2)
@@ -254,10 +266,10 @@ def physics_photon_energy_from_frequency(frequency_in_hertz):
 
 def physics_frequency_to_wavelength(frequency_in_hertz):
     wavelength_in_metres = divide(physics_speed_of_light(), frequency_in_hertz)
-    print("Wavelength of a signal with {} Hz = {} m".format(frequency_in_hertz, wavelength_in_metres))
+    print("Wavelength of a wave with {} Hz = {} m".format(frequency_in_hertz, wavelength_in_metres))
     return wavelength_in_metres
     
 def physics_wavelength_to_frequency(wavelength_in_metres):
     frequency_in_hertz = divide(physics_speed_of_light(), wavelength_in_metres)
-    print("Frequency of a signal with {} m wavelength = {} Hz".format(wavelength_in_metres, frequency_in_hertz))
+    print("Frequency of a wave with {} m wavelength = {} Hz".format(wavelength_in_metres, frequency_in_hertz))
     return frequency_in_hertz
