@@ -246,7 +246,7 @@ def radiowave_recieved_power(watts, distance_metres):
     print("Received power: {} W/m^2".format(result))
     return result
 
-def physics_speed_of_light():
+def physics_speed_of_light_metres_per_second():
     print("Speed of light = 299792458 m/s")
     return 299792458
 
@@ -265,11 +265,11 @@ def physics_photon_energy_from_frequency(frequency_in_hertz):
     return photon_energy_in_joules
 
 def physics_frequency_to_wavelength(frequency_in_hertz):
-    wavelength_in_metres = divide(physics_speed_of_light(), frequency_in_hertz)
+    wavelength_in_metres = divide(physics_speed_of_light_metres_per_second(), frequency_in_hertz)
     print("Wavelength of a wave with {} Hz = {} m".format(frequency_in_hertz, wavelength_in_metres))
     return wavelength_in_metres
     
 def physics_wavelength_to_frequency(wavelength_in_metres):
-    frequency_in_hertz = divide(physics_speed_of_light(), wavelength_in_metres)
+    frequency_in_hertz = divide(physics_speed_of_light_metres_per_second(), wavelength_in_metres)
     print("Frequency of a wave with {} m wavelength = {} Hz".format(wavelength_in_metres, frequency_in_hertz))
     return frequency_in_hertz
